@@ -1,0 +1,15 @@
+select [name] as database_name,
+    database_id,
+    create_date
+from sys.databases
+order by name
+
+
+
+select schema_name(t.schema_id) as schema_name,
+       t.name as table_name,
+       t.create_date,
+       t.modify_date
+from sys.tables t
+order by schema_name,
+         table_name;
